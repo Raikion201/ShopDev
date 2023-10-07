@@ -14,15 +14,7 @@ require('./dbs/init.mongodb')
 const {checkOverLoad} = require('./helpers/check.connect')
 checkOverLoad()
 // init routes
-
-app.get('/' , (req,res,next) => {
-    const strCompress = 'Hello Factipjs'
-
-    return res.status(500).json({
-        message : 'Test',
-        metadata : strCompress.repeat(100000)
-    })
-})
+app.use('/',require('./routes'))
 // handling error
 
 
