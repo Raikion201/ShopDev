@@ -1,3 +1,4 @@
+require('dotenv').config()
 const compression = require('compression')
 const express = require('express')
 const { default: helmet } = require('helmet')
@@ -12,7 +13,7 @@ app.use(compression())
 // init db
 require('./dbs/init.mongodb')
 const {checkOverLoad} = require('./helpers/check.connect')
-checkOverLoad()
+// checkOverLoad()
 // init routes
 app.use('/',require('./routes'))
 // handling error
